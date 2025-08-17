@@ -1,0 +1,163 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0 0% 100%);
+  --foreground: hsl(210 25% 7.8431%);
+  --card: hsl(180 6.6667% 97.0588%);
+  --card-foreground: hsl(210 25% 7.8431%);
+  --popover: hsl(0 0% 100%);
+  --popover-foreground: hsl(210 25% 7.8431%);
+  --primary: hsl(203.8863 88.2845% 53.1373%);
+  --primary-foreground: hsl(0 0% 100%);
+  --secondary: hsl(210 25% 7.8431%);
+  --secondary-foreground: hsl(0 0% 100%);
+  --muted: hsl(240 1.9608% 90%);
+  --muted-foreground: hsl(210 25% 7.8431%);
+  --accent: hsl(211.5789 51.3514% 92.7451%);
+  --accent-foreground: hsl(203.8863 88.2845% 53.1373%);
+  --destructive: hsl(356.3033 90.5579% 54.3137%);
+  --destructive-foreground: hsl(0 0% 100%);
+  --border: hsl(201.4286 30.4348% 90.9804%);
+  --input: hsl(200 23.0769% 97.4510%);
+  --ring: hsl(202.8169 89.1213% 53.1373%);
+  --chart-1: hsl(203.8863 88.2845% 53.1373%);
+  --chart-2: hsl(159.7826 100% 36.0784%);
+  --chart-3: hsl(42.0290 92.8251% 56.2745%);
+  --chart-4: hsl(147.1429 78.5047% 41.9608%);
+  --chart-5: hsl(341.4894 75.2000% 50.9804%);
+  --sidebar: hsl(180 6.6667% 97.0588%);
+  --sidebar-foreground: hsl(210 25% 7.8431%);
+  --sidebar-primary: hsl(203.8863 88.2845% 53.1373%);
+  --sidebar-primary-foreground: hsl(0 0% 100%);
+  --sidebar-accent: hsl(211.5789 51.3514% 92.7451%);
+  --sidebar-accent-foreground: hsl(203.8863 88.2845% 53.1373%);
+  --sidebar-border: hsl(205.0000 25.0000% 90.5882%);
+  --sidebar-ring: hsl(202.8169 89.1213% 53.1373%);
+  --font-sans: Inter, sans-serif;
+  --font-serif: Georgia, serif;
+  --font-mono: Menlo, monospace;
+  --radius: 0.5rem;
+  
+  /* CyberMoriarty Dark Theme Colors */
+  --dark-900: hsl(218 27% 7%);
+  --dark-800: hsl(218 20% 11%);
+  --dark-700: hsl(218 15% 17%);
+  --dark-600: hsl(218 12% 25%);
+  --dark-500: hsl(218 10% 40%);
+  --dark-400: hsl(218 8% 57%);
+  --dark-300: hsl(218 6% 72%);
+  --dark-200: hsl(218 4% 86%);
+  --dark-100: hsl(218 2% 94%);
+  --dark-50: hsl(218 1% 98%);
+  
+  --cyber-primary: hsl(217 91% 60%);
+  --cyber-primary-dark: hsl(217 91% 50%);
+  --cyber-secondary: hsl(217 91% 40%);
+  --cyber-accent: hsl(47 96% 53%);
+  --cyber-success: hsl(142 71% 45%);
+  --cyber-warning: hsl(38 92% 50%);
+  --cyber-danger: hsl(0 84% 60%);
+}
+
+.dark {
+  --background: hsl(218 27% 7%);
+  --foreground: hsl(218 1% 98%);
+  --card: hsl(218 20% 11%);
+  --card-foreground: hsl(218 1% 98%);
+  --popover: hsl(218 20% 11%);
+  --popover-foreground: hsl(218 1% 98%);
+  --primary: hsl(217 91% 60%);
+  --primary-foreground: hsl(0 0% 100%);
+  --secondary: hsl(218 15% 17%);
+  --secondary-foreground: hsl(218 1% 98%);
+  --muted: hsl(218 15% 17%);
+  --muted-foreground: hsl(218 8% 57%);
+  --accent: hsl(218 15% 17%);
+  --accent-foreground: hsl(217 91% 60%);
+  --destructive: hsl(0 84% 60%);
+  --destructive-foreground: hsl(0 0% 100%);
+  --border: hsl(218 12% 25%);
+  --input: hsl(218 15% 17%);
+  --ring: hsl(217 91% 60%);
+  --chart-1: hsl(217 91% 60%);
+  --chart-2: hsl(142 71% 45%);
+  --chart-3: hsl(47 96% 53%);
+  --chart-4: hsl(38 92% 50%);
+  --chart-5: hsl(0 84% 60%);
+  --sidebar: hsl(218 20% 11%);
+  --sidebar-foreground: hsl(218 1% 98%);
+  --sidebar-primary: hsl(217 91% 60%);
+  --sidebar-primary-foreground: hsl(0 0% 100%);
+  --sidebar-accent: hsl(218 15% 17%);
+  --sidebar-accent-foreground: hsl(217 91% 60%);
+  --sidebar-border: hsl(218 12% 25%);
+  --sidebar-ring: hsl(217 91% 60%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+  
+  /* Default to dark theme for cybersecurity context */
+  html {
+    @apply dark;
+  }
+}
+
+/* Custom scrollbar for dark theme */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--dark-800));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--dark-600));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--dark-500));
+}
+
+/* Severity badge styles */
+.severity-critical {
+  @apply bg-red-500/20 text-red-400 border-red-500/30;
+}
+
+.severity-high {
+  @apply bg-orange-500/20 text-orange-400 border-orange-500/30;
+}
+
+.severity-medium {
+  @apply bg-yellow-500/20 text-yellow-400 border-yellow-500/30;
+}
+
+.severity-low {
+  @apply bg-green-500/20 text-green-400 border-green-500/30;
+}
+
+/* Animation for pulsing indicators */
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 1;
+    box-shadow: 0 0 5px currentColor;
+  }
+  50% {
+    opacity: 0.7;
+    box-shadow: 0 0 10px currentColor;
+  }
+}
+
+.pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
